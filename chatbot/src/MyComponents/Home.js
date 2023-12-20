@@ -11,7 +11,7 @@ const Home = () => {
     <div className="about-container">
       <img className="dialog-box" src={MessageBox} alt="Chatbot" />
       <div className="row">
-        <div className="col-left">hello{/* First column content */}</div>
+        <div className="col-left">{/* First column content */}</div>
         <div className="col-right">
           <div className="Chatbot">
             <Chatbot
