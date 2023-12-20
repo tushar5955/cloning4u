@@ -1,0 +1,117 @@
+<div className="card">
+<div className="card-title"><h2>Hi, I'm Tushar Burade!</h2></div>
+<div className="card-content">
+  <p>
+   I love chatting with machines, and for the past five years, I've been diving deep into machine learning. I'm lucky enough to make a living doing what I adore—talking to these incredible machines using Python, which is like a second language to me.</p>
+
+<p>My typical day involves lots of cool stuff! I research, design, run experiments, evaluate results, and do a ton of coding. But when I'm not glued to tech, I'm all about the butterfly effect—I believe small actions can lead to big impacts. I enjoy reading, exploring various topics, and playing cricket or football for fun and a good break.</p>
+
+<p>In a nutshell, I'm all about the magic of tech and creativity coming together. I'm endlessly curious and always up for new challenges in the world of data science and machine learning. Can't wait to explore more!
+  </p>
+</div>
+</div>
+
+
+      {/* <div className="about-left">
+        <img src={profilephoto} alt="Profile Photo" className="profile-photo" />
+      </div>
+      <div className="card">
+        <div className="card-content">
+          <h2>About Me</h2>
+          <p>
+            I am a passionate and creative individual with a strong background
+            in technology and design. I have a natural curiosity and a drive to
+            learn new things, which has led me to explore a variety of different
+            fields. I am always looking for new challenges and opportunities to
+            grow and develop my skills.
+          </p>
+        </div>
+      </div> */}
+
+
+      <>
+      
+        <img className="dialog-box" src={MessageBox} alt="Chatbot" />
+        <div className="Chatbot">
+          <Chatbot config={config} messageParser={MessageParser} actionProvider={ActionProvider} />
+        </div>
+        </>
+
+
+        <div className="Chatbot">
+          <img className="dialog-box" src={MessageBox} alt="Chatbot" />
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
+        </div>
+
+        background: linear-gradient(to right, rgb(84, 174, 235), #3335be)
+
+
+
+
+        <Card>
+          <Card.Header><h2>Hi, I'm Tushar Burade!</h2></Card.Header>
+              
+            <Card.Body>
+                <p>
+                  I love chatting with machines, and for the past five years, I've
+                  been diving deep into machine learning. I'm lucky enough to make a
+                  living doing what I adore—talking to these incredible machines using
+                  Python, which is like a second language to me.
+                </p>
+      
+                <p>
+                  My typical day involves lots of cool stuff! I research, design, run
+                  experiments, evaluate results, and do a ton of coding. But when I'm
+                  not glued to tech, I'm all about the butterfly effect—I believe
+                  small actions can lead to big impacts. I enjoy reading, exploring
+                  various topics, and playing cricket or football for fun and a good
+                  break.
+                </p>
+      
+                <p>
+                  In a nutshell, I'm all about the magic of tech and creativity coming
+                  together. I'm endlessly curious and always up for new challenges in
+                  the world of data science and machine learning. Can't wait to
+                  explore more!
+                </p>
+                
+                </Card.Body>
+          </Card>
+
+
+          .card {
+            width: 50vw;
+            margin: 20px;
+            padding: 20px;
+            position: relative;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+          
+            background: radial-gradient(circle at 50% 50%, #000000 0%, transparent 70%);
+            border-radius: 10px;
+            box-shadow: none;
+            transform: perspective(1000px) rotateY(10deg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+
+
+
+          const [maxHeight, setMaxHeight] = useState('auto');
+
+          useEffect(() => {
+            // Find the maximum height among the cards
+            const cards = document.querySelectorAll('.my-card-p');
+            let max = 0;
+            cards.forEach(card => {
+              const height = card.getBoundingClientRect().height;
+              if (height > max) {
+                max = height;
+              }
+            });
+            setMaxHeight(`${max}px`);
+          }, []);
