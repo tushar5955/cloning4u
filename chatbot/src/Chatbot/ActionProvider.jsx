@@ -9,8 +9,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const initialAction = (userMessage) => {
         //console.log(userMessage);
         // const url = "http://127.0.0.1:5000/reply"
-        const url = "http://34.93.8.236:5000/reply"
+        // const url = "http://34.93.8.236:5000/reply"
         // const url = "http://0.0.0.0:5000/reply"
+        const url = "http://localhost/reply"
         let user = {"message":userMessage}
         fetch(url, {
           method: 'POST',

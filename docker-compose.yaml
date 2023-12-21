@@ -6,15 +6,22 @@ services:
       context: ./chatbot
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3000"  # Remove host port mapping as Nginx will handle external access
     volumes:
       - ./chatbot:/user/src/app
-
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "5000"  # Remove host port mapping as Nginx will handle external access
     volumes:
       - ./backend:/app
+  nginx:
+    build: ./nginx  # Assuming the Dockerfile for Nginx is in a directory named 'nginx'
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - chatbot
+      - backend
